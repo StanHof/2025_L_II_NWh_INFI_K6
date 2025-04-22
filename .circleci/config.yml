@@ -12,7 +12,9 @@ jobs:
       - run:
           name: Run tests
           command: make test
-
+      -run:
+          name: Run docker
+          command: make docker_build
 workflows:
   basic:
     jobs:
