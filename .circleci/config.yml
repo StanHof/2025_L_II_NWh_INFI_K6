@@ -7,7 +7,7 @@ jobs:
       docker_layer_caching: true
     steps:
       - checkout
-      - run: make docker_push
+      - run:
           name: Install dependencies
           command: make deps
       - run:
@@ -16,6 +16,9 @@ jobs:
       - run:
           name: Run docker
           command: make docker_build
+      - run:
+          name: Docker Push
+          command: make docker_push
 workflows:
   basic:
     jobs:
